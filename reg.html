@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+button{
+  
+  border-color:white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+outline:none;
+  background-color:#00bfff;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+<body style="background-color:#00bfff">
+<br><br><br>
+<div class="container">
+  <center><h2 style="color:white">Registration Form</h2></center>
+  <br>
+  <form class="form-horizontal" action="/reg.html" method="POST">
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="web" style="color:white">Title:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="web" name="web" readonly >
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="name" style="color:white">Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="name" placeholder="Enter name (ex: 'Rajesh Raj P')" name="name" oninvalid="this.setCustomValidity('Enter name')"" oninput="this.setCustomValidity('')" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="Gender" style="color:white">Gender:</label>
+      <div class="col-sm-2">
+        <select id="gender" class="form-control" name="gender"  style="color:black">
+	   <option value="male">Male</option>
+	   <option value="female">Female</option>
+	   <option value="other">Other</option>
+	</select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="email" style="color:white">Email ID:</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" oninvalid="this.setCustomValidity('Enter valid email id')" oninput="this.setCustomValidity('')" required >
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="num" style="color:white">Mobile No.:</label>
+      <div class="col-sm-4">          
+        <input type="tel" class="form-control" id="num" pattern="[7-9]{1}[0-9]{9}" placeholder="Enter number" name="num" oninvalid="this.setCustomValidity('Enter valid mobile number')" oninput="this.setCustomValidity('')" required="required">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="clg" style="color:white">College Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="clg" placeholder="Enter college name" name="clg"  >
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="year" style="color:white">Year Of Passing:</label>
+      <div class="col-sm-4">
+        <input type="year" class="form-control" id="year" placeholder="Enter year" name="year"  oninvalid="this.setCustomValidity('Enter year')" oninput="this.setCustomValidity('')" pattern="[0-9]{4}" >
+      </div>
+    </div>
+    
+    
+<hr>
+    <div class="form-group">        
+      <div class="col-sm-offset-5 col-sm-20">
+        <button type="submit" class="button" onclick={x()}>Confirm Registration</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  var a;
+  a=localStorage.getItem('objectToPass');
+  document.getElementById('web').value=a;
+  </script>
+</body>
+</html>
