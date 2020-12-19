@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IOT webinar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+*{
+box-sizing:border-box;
+}
+.card{
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+padding:16px;
+}
+button{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+outline:none;
+  background-color:green;
+border-radius:12px;
+}
+
+</style>
+</head>
+<body style="background-image:url('https://lh3.googleusercontent.com/-YZIZTUNbhWs/X47aytnHaqI/AAAAAAAAWtw/MpWwADlqbZ8wiev6xBLRhpPVirRdN0JogCK8BGAsYHg/s512/2020-10-20.png');background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+
+<div class="row" style="text-align:center;font-size:300%;background-image:url('data:image/jpeg;base64,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');background-repeat: no-repeat;
+  
+ background-size:20% 100%;padding:2%;background-color:black;color:white;">IOT</div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-1"></div>
+  <div class="col-sm-5" style="padding : 50px">
+<div class="card">
+    <p style="font-size:150%;">&nbsp &nbsp This webinar is about the learning of interfacing the sensors with NodeMCU and the basics of Cloud Computing.Here we can also learn how to upload data to cloud server from the environmental sensors.This webinar will be conducted for two days and the agenda for this programme is shown.</p>
+<br>
+<table style="width:100%;font-size:150%;border-collapse:separate;border-spacing:0 15px;">
+  <th>Details</th>
+  <tr>
+    <td width="45%">Lecturer Name</td>
+    <td width='5%'>:</td>
+    <td>Mr.Kumaran.C.S. BE</td>
+  </tr>
+  <tr>
+    <td>Duration</td>
+    <td>:</td>
+    <td>Two Days</td>
+  </tr>
+  <tr>
+    <td>Start Date</td>
+    <td>:</td>
+    <td>25/11/2020</td>
+  </tr>
+  <tr>
+    <td>End Date</td>
+    <td>:</td>
+    <td>26/11/2020</td>
+  </tr>
+  <tr>
+    <td>Timing</td>
+    <td>:</td>
+    <td>10.00AM-4.00PM</td>
+  </tr>
+</table>
+<br><br><br><br><br>
+<p style="font-size:127%"><u>Note:</u>The idea and the ways to do a mini-project will be taught in the last section.So,attend this webinar with PC and NodeMCU kit for better experience.</p><br>
+<br></div>
+  </div>
+
+  <div class="col-sm-5" style="padding : 50px">
+<div class="card">
+  
+    <table style="width:100%;font-size:125%;border-collapse:separate;border-spacing:0 15px;">
+
+  <th>Day-1</th>
+<tr>
+  <td width='45%'>10AM-10.30AM</td>
+  <td width='5%'>:</td>
+  <td>Introduction section</td>
+</tr>
+<tr>
+  <td>10.30AM-11.30AM</td>
+  <td>:</td>
+  <td>The basics of Sensors and Actuators</td>
+</tr>
+<tr>
+  <td>11.30AM-11.45AM</td>
+  <td>:</td>
+  <td>Break</td>
+</tr>
+<tr>
+  <td>11.45PM-1.00PM</td>
+  <td>:</td>
+  <td>Basics of NodeMCU8266</td>
+</tr>
+<tr>
+  <td>1.00PM-2.00PM</td>
+  <td>:</td>
+  <td>Lunch Break</td>
+</tr>
+<tr>
+  <td>2.00PM-4.00PM</td>
+  <td>:</td>
+  <td>Interfacing Sensors with NodeMCU</td>
+</tr>
+
+<th>Day-2</th>
+
+<tr>
+  <td>10AM-11.30AM</td>
+  <td>:</td>
+  <td>Introduction to Cloud Computing</td>
+</tr>
+<tr>
+  <td>11.30AM-11.45AM</td>
+  <td>:</td>
+  <td>Break</td>
+</tr>
+<tr>
+  <td>11.45AM-1.00PM</td>
+  <td>:</td>
+  <td>Understanding and Introduction to RPi</td>
+</tr>
+<tr>
+  <td>1.00PM-2.00PM</td>
+  <td>:</td>
+  <td>Lunch Break</td>
+</tr>
+<tr>
+  <td>2.00PM-4.00PM</td>
+  <td>:</td>
+  <td>Upload free data from Environmental Sensors to Cloud Server.</td>
+</tr>
+</table>
+<center><button onclick={myFunction()}>Register Now</button><center>
+
+
+<script>
+function myFunction() {
+let a="IOT";
+localStorage.setItem('objectToPass',a);
+  window.location.href="reg.html";
+}
+</script>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
